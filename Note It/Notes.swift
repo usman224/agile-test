@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum NoteError: Error {
+    case outOfRange(index:Int)
+}
+
+
+
 struct Note {
     var title: String
     var text: String
@@ -16,20 +22,58 @@ struct Note {
 class Notes {
     var notes:[Note]
     
-    init() {
+    private init() {
         self.notes = []
     }
     
+    public static let sharedInstance = Notes()
+
+    
+    
     
     public func add(note: Note){
-        notes.add(note: Note(title: "1st note", text: "details"))
-        
+        let notes = Notes.sharedInstance
+        notes.add(note: Note(title: "Note One", text: "Details of note one"))
     }
+    
+    
+    
     
     public func getNote(atIndex index: Int)throws -> Note {
         // needs implementing
         return(Note(title:"Hello", text: "world"))
     }
+    
+    public var count: Int {
+        get{
+            //implement
+            return 0
+        }
+    }
+    
+    
+    public func clearList(){
+        //implement
+    }
+    
+    
+    public func insert(note:Note, at index: Int) throws {
+        //needs implementing
+    }
+    
+    
+    public func update(note: Note, at index: Int) throws{
+        //needs implementing
+    }
+    
+    public func remove(at index: Int) throws{
+        //needs implementing
+    }
+    
+    
+    
+    
+    
 }
     
     
