@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9928BE3D1DB5076B00394C09 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928BE3C1DB5076B00394C09 /* Notes.swift */; };
+		9963BC651DB5155F00C3C379 /* NotesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9963BC641DB5155F00C3C379 /* NotesTest.swift */; };
 		99AA68301DB1063600A04275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AA682F1DB1063600A04275 /* AppDelegate.swift */; };
 		99AA68321DB1063600A04275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AA68311DB1063600A04275 /* ViewController.swift */; };
 		99AA68351DB1063600A04275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99AA68331DB1063600A04275 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9928BE3C1DB5076B00394C09 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		9963BC641DB5155F00C3C379 /* NotesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTest.swift; sourceTree = "<group>"; };
 		99AA682C1DB1063600A04275 /* Note It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AA682F1DB1063600A04275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99AA68311DB1063600A04275 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				99AA683B1DB1063600A04275 /* LaunchScreen.storyboard */,
 				99AA683E1DB1063600A04275 /* Info.plist */,
 				99AA68361DB1063600A04275 /* Note_It.xcdatamodeld */,
+				9928BE3C1DB5076B00394C09 /* Notes.swift */,
 			);
 			path = "Note It";
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				99AA68471DB1063600A04275 /* Note_ItTests.swift */,
 				99AA68491DB1063600A04275 /* Info.plist */,
+				9963BC641DB5155F00C3C379 /* NotesTest.swift */,
 			);
 			path = "Note ItTests";
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				99AA68321DB1063600A04275 /* ViewController.swift in Sources */,
 				99AA68381DB1063600A04275 /* Note_It.xcdatamodeld in Sources */,
 				99AA68301DB1063600A04275 /* AppDelegate.swift in Sources */,
+				9928BE3D1DB5076B00394C09 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99AA68481DB1063600A04275 /* Note_ItTests.swift in Sources */,
+				9963BC651DB5155F00C3C379 /* NotesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +517,7 @@
 				99AA68591DB1063600A04275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99AA685A1DB1063600A04275 /* Build configuration list for PBXNativeTarget "Note ItTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +526,7 @@
 				99AA685C1DB1063600A04275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99AA685D1DB1063600A04275 /* Build configuration list for PBXNativeTarget "Note ItUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +535,7 @@
 				99AA685F1DB1063600A04275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
