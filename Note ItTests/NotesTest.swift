@@ -48,6 +48,14 @@ class NotesTests: XCTestCase {
         let notes = Notes.sharedInstance
         notes.add(note: Note(title: "Note One", text: "Details of note one"))
         XCTAssertEqual(notes.count, 1)
+        do{
+            _ = try notes.getNote(atIndex: 1)
+            XCTFail()
+        } catch NoteError.outOfRange(index: 1){
+            print("index \(index) is out of range")
+        } catch {
+            print("an error has occurred")
+        }
     }
     
     func testAddMultipleNotes() {
@@ -61,7 +69,7 @@ class NotesTests: XCTestCase {
     func testRetrieveSingleNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            _ = try notes.add(note: Note(title: "Note One", text: "Details of note one"))
             let note = try notes.getNote(atIndex: 0)
             XCTAssertEqual(note.title, "Note One")
             XCTAssertEqual(note.text, "Details of note one")
