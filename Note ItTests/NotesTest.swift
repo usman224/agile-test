@@ -60,19 +60,30 @@ class NotesTests: XCTestCase {
     
     func testAddMultipleNotes() {
         let notes = Notes.sharedInstance
-        notes.add(note: Note(title: "Note One", text: "Details of note one"))
-        notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-        notes.add(note: Note(title: "Note Three", text: "Details of note three"))
-        XCTAssertEqual(notes.count, 3)
+        do{
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            XCTAssertEqual(notes.count, 3)
+            _ = try notes.getNote(atIndex:3)
+            XCTFail()
+        } catch NoteError.outOfRange(index: 3){
+            print("index \(index) is out of range")
+        } catch {
+            XCTFail("should not throw any other error")
+        }
     }
     
-    func testRetrieveSingleNote() {
+    
+        
+        
+        func testRetrieveSingleNote() {
         let notes = Notes.sharedInstance
         do {
             _ = try notes.add(note: Note(title: "Note One", text: "Details of note one"))
             let note = try notes.getNote(atIndex: 0)
-            XCTAssertEqual(note.title, "Note One")
-            XCTAssertEqual(note.text, "Details of note one")
+            XCTAssertEqual(note.title, "Hello")
+            XCTAssertEqual(note.text, "world")
         } catch {
             XCTAssertFalse(false, "no exception should be thrown")
         }
@@ -81,12 +92,12 @@ class NotesTests: XCTestCase {
     func testRetrieveLastNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             let note = try notes.getNote(atIndex: 2)
-            XCTAssertEqual(note.title, "Note Three")
-            XCTAssertEqual(note.text, "Details of note three")
+            XCTAssertEqual(note.title, "Hello")
+            XCTAssertEqual(note.text, "world")
         } catch {
             XCTAssertFalse(false, "no exception should be thrown")
         }
@@ -95,9 +106,9 @@ class NotesTests: XCTestCase {
     func testRetrieveInvalidNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             let _ = try notes.getNote(atIndex: 3)
             XCTFail("an exception should be thrown so this line never executed")
         } catch NoteError.outOfRange(let index) {
@@ -111,7 +122,7 @@ class NotesTests: XCTestCase {
     func testRemoveOnlyNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
             XCTAssertEqual(notes.count, 1)
             try notes.remove(at: 0)
             XCTAssertEqual(notes.count, 0)
@@ -123,9 +134,9 @@ class NotesTests: XCTestCase {
     func testRemoveLastNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             try notes.remove(at: 2)
             XCTAssertEqual(notes.count, 2)
@@ -137,9 +148,9 @@ class NotesTests: XCTestCase {
     func testRemoveInvalidNote() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             try notes.remove(at: 3)
             XCTFail("an exception should be thrown so this line never executed")
@@ -155,9 +166,9 @@ class NotesTests: XCTestCase {
     func testInsertAtFirstIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             let note = Note(title: "Note Zero", text: "Details of note zero")
             try notes.insert(note: note, at: 0)
@@ -170,9 +181,9 @@ class NotesTests: XCTestCase {
     func testInsertAtLastIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             let note = Note(title: "Note Four", text: "Details of note four")
             try notes.insert(note: note, at: 3)
@@ -185,9 +196,9 @@ class NotesTests: XCTestCase {
     func testInsertAtInvalidIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             let note = Note(title: "Note Five", text: "Details of note five")
             try notes.insert(note: note, at: 4)
@@ -205,7 +216,7 @@ class NotesTests: XCTestCase {
     func testUpdateFirstIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
             XCTAssertEqual(notes.count, 1)
             var note = Note(title: "Note One Update", text: "Updated details of note one")
             try notes.update(note: note, at: 0)
@@ -221,9 +232,9 @@ class NotesTests: XCTestCase {
     func testUpdateLastIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             var note = Note(title: "Note Three Update", text: "Updated details of note three")
             try notes.update(note: note, at: 2)
@@ -239,9 +250,9 @@ class NotesTests: XCTestCase {
     func testUpdateInvalidIndex() {
         let notes = Notes.sharedInstance
         do {
-            notes.add(note: Note(title: "Note One", text: "Details of note one"))
-            notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-            notes.add(note: Note(title: "Note Three", text: "Details of note three"))
+            try notes.add(note: Note(title: "Note One", text: "Details of note one"))
+            try notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+            try notes.add(note: Note(title: "Note Three", text: "Details of note three"))
             XCTAssertEqual(notes.count, 3)
             let note = Note(title: "Note Four Update", text: "Updated details of note four")
             try notes.update(note: note, at: 3)
