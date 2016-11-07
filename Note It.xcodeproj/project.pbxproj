@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9928BE3D1DB5076B00394C09 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928BE3C1DB5076B00394C09 /* Notes.swift */; };
+		994289B21DD11C1400FF27E4 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994289B11DD11C1400FF27E4 /* ListController.swift */; };
+		994289B41DD11C5900FF27E4 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994289B31DD11C5900FF27E4 /* NoteController.swift */; };
 		9963BC651DB5155F00C3C379 /* NotesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9963BC641DB5155F00C3C379 /* NotesTest.swift */; };
 		99AA68301DB1063600A04275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AA682F1DB1063600A04275 /* AppDelegate.swift */; };
-		99AA68321DB1063600A04275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AA68311DB1063600A04275 /* ViewController.swift */; };
 		99AA68351DB1063600A04275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99AA68331DB1063600A04275 /* Main.storyboard */; };
 		99AA68381DB1063600A04275 /* Note_It.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99AA68361DB1063600A04275 /* Note_It.xcdatamodeld */; };
 		99AA683A1DB1063600A04275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99AA68391DB1063600A04275 /* Assets.xcassets */; };
@@ -38,10 +39,11 @@
 
 /* Begin PBXFileReference section */
 		9928BE3C1DB5076B00394C09 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		994289B11DD11C1400FF27E4 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		994289B31DD11C5900FF27E4 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		9963BC641DB5155F00C3C379 /* NotesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTest.swift; sourceTree = "<group>"; };
 		99AA682C1DB1063600A04275 /* Note It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AA682F1DB1063600A04275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99AA68311DB1063600A04275 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99AA68341DB1063600A04275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99AA68371DB1063600A04275 /* Note_It.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note_It.xcdatamodel; sourceTree = "<group>"; };
 		99AA68391DB1063600A04275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,13 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				99AA682F1DB1063600A04275 /* AppDelegate.swift */,
-				99AA68311DB1063600A04275 /* ViewController.swift */,
 				99AA68331DB1063600A04275 /* Main.storyboard */,
 				99AA68391DB1063600A04275 /* Assets.xcassets */,
 				99AA683B1DB1063600A04275 /* LaunchScreen.storyboard */,
 				99AA683E1DB1063600A04275 /* Info.plist */,
 				99AA68361DB1063600A04275 /* Note_It.xcdatamodeld */,
 				9928BE3C1DB5076B00394C09 /* Notes.swift */,
+				994289B11DD11C1400FF27E4 /* ListController.swift */,
+				994289B31DD11C5900FF27E4 /* NoteController.swift */,
 			);
 			path = "Note It";
 			sourceTree = "<group>";
@@ -268,10 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99AA68321DB1063600A04275 /* ViewController.swift in Sources */,
 				99AA68381DB1063600A04275 /* Note_It.xcdatamodeld in Sources */,
 				99AA68301DB1063600A04275 /* AppDelegate.swift in Sources */,
 				9928BE3D1DB5076B00394C09 /* Notes.swift in Sources */,
+				994289B21DD11C1400FF27E4 /* ListController.swift in Sources */,
+				994289B41DD11C5900FF27E4 /* NoteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
