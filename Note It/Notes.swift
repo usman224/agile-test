@@ -35,6 +35,14 @@ class Notes {
         self.notes.append(note)
         }
     
+    Notes.add(note: Note(title: "Note One", text: "Details of note one"))
+    Notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+    
+    
+    
+    
+    
+    
     
     
     
@@ -84,9 +92,8 @@ class Notes {
         }
         self.notes.remove(at: index)
     }
-    
-    
 }
+
 
 
     
