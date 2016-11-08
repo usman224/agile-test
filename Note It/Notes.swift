@@ -31,12 +31,12 @@ class Notes {
     
     
     
-    public func add(note: Note)throws{      //add new note function
+    public func add(note: Note){      //add new note function
         self.notes.append(note)
         }
     
-    Notes.add(note: Note(title: "Note One", text: "Details of note one"))
-    Notes.add(note: Note(title: "Note Two", text: "Details of note two"))
+    // Notes.add(note: Note(title: "Note One", text: "Details of note one"))
+    // Notes.add(note: Note(title: "Note Two", text: "Details of note two"))
     
     
     

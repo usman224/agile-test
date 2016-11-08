@@ -9,9 +9,17 @@
 import UIKit
 
 class ListController: UITableViewController {
+    
+    let note = Notes.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let noteone = Note (title: "Note One", text: "Details of note one")
+        let notetwo = Note (title: "Note Two", text: "Details of note two")
+        
+        self.note.add(note: noteone)
+        self.note.add(note: notetwo)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +37,24 @@ class ListController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.note.notes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Note", for: indexPath)
+        cell.textLabel?.text=self.note.notes[indexPath.row].title
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
