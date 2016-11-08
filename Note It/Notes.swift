@@ -38,6 +38,8 @@ class Notes {
     
     
     
+    
+    
     public func getNote(atIndex index: Int)throws -> Note {       //get note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw NoteError.outOfRange(index: index)
@@ -85,7 +87,8 @@ class Notes {
     
     
 }
-    
+
+
     
 
 
