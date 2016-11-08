@@ -31,14 +31,14 @@ class Notes {
     
     
     
-    public func add(note: Note)throws{
+    public func add(note: Note)throws{      //add new note function
         self.notes.append(note)
         }
     
     
     
     
-    public func getNote(atIndex index: Int)throws -> Note {
+    public func getNote(atIndex index: Int)throws -> Note {       //get note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw NoteError.outOfRange(index: index)
         }
@@ -46,19 +46,19 @@ class Notes {
     }
     
     
-    public var count: Int {
+    public var count: Int {             // count how many notes
         get{
             return self.notes.count
         }
     }
     
     
-    public func clearList(){
+    public func clearList(){            //clear notes list
         self.notes.removeAll()
     }
     
     
-    public func insert(note:Note, at index: Int) throws {
+    public func insert(note:Note, at index: Int) throws {       //insert note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw   NoteError.outOfRange(index: index)
         }
@@ -67,7 +67,7 @@ class Notes {
     }
     
     
-    public func update(note: Note, at index: Int) throws{
+    public func update(note: Note, at index: Int) throws{           //update note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw   NoteError.outOfRange(index: index)
         }
@@ -76,13 +76,7 @@ class Notes {
     }
     
     
-    
-    
-    
-    
-    
-    
-    public func remove(at index: Int) throws{
+    public func remove(at index: Int) throws{                   //remove note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw NoteError.outOfRange(index: index)
         }

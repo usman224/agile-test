@@ -81,7 +81,7 @@
                             <outlet property="delegate" destination="uRE-d0-URk" id="5TC-Wb-KAf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gqH-cR-f0y"/>
+                    <navigationItem key="navigationItem" title="Note It" id="gqH-cR-f0y"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRe-9Z-zqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
