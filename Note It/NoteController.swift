@@ -9,11 +9,14 @@
 import UIKit
 
 class NoteController: UIViewController {
+    
+    public var noteID:Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let id:Int = self.noteID{
+            print("view did load with note \(id)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

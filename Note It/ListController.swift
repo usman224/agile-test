@@ -91,14 +91,27 @@ class ListController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showNote" {
+            print("segue with \(segue.identifier) indentifier triggered")
+            if let indexPath = self.tableView.indexPathForSelectedRow{
+                print("found row \(indexPath.row)")
+                if let navigationController = segue.destination as? UINavigationController{
+                    if let noteController = navigationController.topViewController as? NoteController {
+                        print("found Note Controller")
+                        noteController.noteID = indexPath.row
+                        
+                    }
+                }
+                
+            }
+        }
+        
     }
-    */
+    
 
 }
