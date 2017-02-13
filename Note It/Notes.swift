@@ -16,7 +16,6 @@ enum NoteError: Error {
 
 struct Note {
     var title: String
-    var text: String
 }
 
 class Notes {
@@ -35,15 +34,12 @@ class Notes {
         self.notes.append(note)
         }
     
-    // Notes.add(note: Note(title: "Note One", text: "Details of note one"))
-    // Notes.add(note: Note(title: "Note Two", text: "Details of note two"))
-    
     
     public func getNote(atIndex index: Int)throws -> Note {       //get note function
         if (index < 0) || (index > (self.notes.count - 1)){
             throw NoteError.outOfRange(index: index)
         }
-        return(Note(title:"Hello", text: "world"))
+        return(Note(title:"Hello"))
     }
     
     

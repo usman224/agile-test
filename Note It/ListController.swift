@@ -15,11 +15,15 @@ class ListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let noteone = Note (title: "Note One", text: "Details of note one")
-        let notetwo = Note (title: "Note Two", text: "Details of note two")
+        let noteone = Note (title: "Sigma")
+        let notetwo = Note (title: "Maths")
+        let notethree = Note (title: "Programming")
+        let notefour = Note (title: "Settings")
         
         self.note.add(note: noteone)
         self.note.add(note: notetwo)
+        self.note.add(note: notethree)
+        self.note.add(note: notefour)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -95,7 +99,7 @@ class ListController: UITableViewController {
     // MARK: - Navigation
 
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNote" {
             print("segue with \(segue.identifier) indentifier triggered")
             if let indexPath = self.tableView.indexPathForSelectedRow{
@@ -111,7 +115,7 @@ class ListController: UITableViewController {
             }
         }
         
-    }
+    }*/
     
 
 }
