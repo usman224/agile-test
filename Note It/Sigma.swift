@@ -73,7 +73,7 @@ class Notes {
     }
     
     
-    public func remove(at index: Int) throws{                   //remove note function
+    public func remove(at index: Int) throws{                   //remove note function for list
         if (index < 0) || (index > (self.notes.count - 1)){
             throw NoteError.outOfRange(index: index)
         }
