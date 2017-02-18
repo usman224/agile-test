@@ -62,22 +62,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="To Be Developed " textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0P5-pp-fDj">
-                                <rect key="frame" x="16" y="58" width="343" height="525"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timetable" translatesAutoresizingMaskIntoConstraints="NO" id="hOR-Dy-5zU">
+                                <rect key="frame" x="24" y="125" width="325" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="325" id="LhC-KY-nC2"/>
+                                    <constraint firstAttribute="width" constant="325" id="M8V-WH-i3m"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="221" id="dTq-7G-sFG"/>
+                                    <constraint firstAttribute="height" constant="221" id="xhh-al-y29"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0P5-pp-fDj" firstAttribute="top" secondItem="lGA-IL-VA9" secondAttribute="bottom" constant="8" id="3kC-M0-paI"/>
-                            <constraint firstItem="51b-rx-X5f" firstAttribute="top" secondItem="0P5-pp-fDj" secondAttribute="bottom" constant="20" id="4pX-Q1-5E3"/>
-                            <constraint firstItem="0P5-pp-fDj" firstAttribute="leading" secondItem="1d7-Ya-152" secondAttribute="leadingMargin" id="Ibf-dU-8XO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0P5-pp-fDj" secondAttribute="trailing" id="O9k-4O-XSs"/>
+                            <constraint firstItem="hOR-Dy-5zU" firstAttribute="top" secondItem="lGA-IL-VA9" secondAttribute="bottom" constant="75" id="684-pO-7x5"/>
                             <constraint firstItem="lGA-IL-VA9" firstAttribute="top" secondItem="u1K-wX-Sui" secondAttribute="bottom" constant="20" id="QbY-XB-qj0"/>
                             <constraint firstItem="lGA-IL-VA9" firstAttribute="leading" secondItem="1d7-Ya-152" secondAttribute="leadingMargin" id="YEN-8q-psi"/>
+                            <constraint firstItem="hOR-Dy-5zU" firstAttribute="leading" secondItem="1d7-Ya-152" secondAttribute="leadingMargin" constant="8" id="azD-1x-qLc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2qP-0O-mIo"/>
@@ -144,6 +144,9 @@
             <point key="canvasLocation" x="-400" y="-519"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Timetable" width="456" height="253"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Uw6-QB-oNE"/>
     </inferredMetricsTieBreakers>
